@@ -74,6 +74,7 @@ Git 初始化
 + `git merge --abort`
 取消 merge
 
+
 ### .gitignore常用配置
 
 ---
@@ -83,3 +84,86 @@ Git 初始化
 + ` /floder/file.txt` 忽略folder下的file.txt文件
 + `fd/*` 忽略目錄fd下的全部內容
 + `!/fd2/bin/` 不忽略根目錄下的/fd2/bin/目錄
+
+### 分支的使用方法
+
+---
+
+##### 為了將流程中不同的修改記錄的分開儲存，所以使用分支
+##### 可讓分開的分支不受其他分支的影響
+##### 因此在同一個工作流程裡可以同時進行多個不同的修改
+
+#### 1.事前準備
+##### 初始化資料夾
+`$ git init`
+
+##### 資料夾下建立`file.txt`的檔案，並且提交
+>`file.txt`<br> git 分支的使用方法
+
+##### 提交
+`$ git add file.txt`
+`$ git commit -m "first commit"`
+
+#### 2.建立分支
+##### 建立名為issue1的分支
+`$ git branch issue1`
+###### 功能或版本上的新增、修改都可以用分支的方式獨立作業，開發完整時再將分支合併回主幹
+
+##### 若直接執行branch則可顯示列表，*號則是目前位於的分支
+>`$ git branch`<br>`issue1`<br>`*master`
+#### 3.切換分支
+##### 切換到 issue1 分支
+`$ git checkout issue1`
+###### 若要在新建的分支上提交，則需要切換到該分支
+
+##### 新增`file.txt`的檔案內容，並且提交，此時紀錄會在issue1分支上
+>`file.txt`<br>git 分支的使用方法<br>checkout 切換分支
+##### 提交
+`$ git add file.txt`
+`$ git commit -m "first commit"`
+#### 4.合併分支
+##### 切回master主幹
+`$ git checkout master`
+##### 此時master下的`file.txt`不會出現issue1分支的變更
+>`file.txt`<br> git 分支的使用方法
+##### 合併 issue1 分支
+`$ git merge issue1`
+###### 確認修改內容完整後即可將分支併回主幹
+
+##### 執行合併後 分支的更動都會加回主幹
+>`file.txt`
+> git 分支的使用方法
+> checkout 切換分支
+#### 5.刪除分支
+##### 執行以下命令
+`$ git branch -d issue1`
+##### 確認分支是否已被刪除
+>`$ git branch`<br>`*master`
+#### 6.平行操作
+##### 建立兩個分支 並且切換到issue2
+`$ git branch issue2`
+`$ git branch issue3`
+`$ git checkout issue2`
+##### 在`myfile.txt`檔案增加文字然後提交
+>`file.txt`<br>git 分支的使用方法<br>checkout 切換分支<br> commit 紀錄索引
+##### 切換到issue3
+`$ git branch issue3`
+##### 剛剛新增的文字是在issue2增加的，所以issue3中不會出現
+##### 新增以下文字
+>`file.txt`<br>git 分支的使用方法<br>checkout 切換分支<br>pull 取得遠端數據庫
+##### 這樣分別兩個在不同的分支平行增加了兩行不一樣的文字內容
+#### 7.解決合併的衝突
+##### 把issue2分支和issue3分支的修改合併到 master
+##### 切換到master分支後，合併issue2分支
+`$ git checkout master`
+`$ git merge issue2`
+##### 接著合併issue3
+`$ git merge issue3`
+##### 因在同一行文字進行修改，所以產生衝突。這時`myfile.txt`的內容如下：
+>`file.txt`<br>git 分支的使用方法<br>checkout 切換分支<br>\<<<<<<< HEAD<br>commit 紀錄索引<br>\=======<br>pull 取得遠端數據庫<br>\>>>>>>> issue3
+##### 找到差異的部分，做以下的修改
+>`file.txt`<br>git 分支的使用方法<br>checkout 切換分支<br>commit 記錄索引的狀態<br>pull 取得遠端數據庫
+##### 解決衝突後即可提交
+`$ git add file.txt`
+`$ git commit -m "merge issue3"`
+
