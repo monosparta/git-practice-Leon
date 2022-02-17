@@ -73,3 +73,22 @@ Git 初始化
 合併分支(平行)
 + `git merge --abort`
 取消 merge
+
+### Commit 介紹及使用
+---
+###### 開發者要將修改檔案後的專案內容，增加為一個新的專案版本，這個動作就稱為提交(`Commit`)
+###### 開發者可以每開發完一項功能，或一個版本，就先將程式碼`commit`到本機端儲存庫上，等到多次提交後，再一次將本機端儲存庫上的專案程式碼，一次性發布(`Push`)到GitHub網站上的雲端儲存庫
+#### 使用方式
+###### 使用`commit`前，必須將欲提交的檔案以`add`指令追蹤該檔案
+###### 以index.html為例
+`$ git add index.html`
+###### 提交index.html
+`$ git commit -m "message"`
+###### index.html檔案即儲存到本地數據庫，"message"可自行設定版本資訊或文字說明
+###### 其他相關參數
+###### 所有修改的檔案都 commit，但是 untracked file 還是得要先 add
+`$ git commit -a`
+###### 加入比對結果
+`$ git commit -v`
+###### 修改前一次提交 (追加檔案到最近一次的 Commit)
+`$ git commit --amend`
