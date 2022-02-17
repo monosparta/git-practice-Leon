@@ -110,7 +110,7 @@ Git 初始化
 ###### 功能或版本上的新增、修改都可以用分支的方式獨立作業，開發完整時再將分支合併回主幹
 
 ##### 若直接執行branch則可顯示列表，*號則是目前位於的分支
->`$ git branch`<br>`issue1`<br>`*master`
+>`$ git branch`<br>issue1<br>*master
 #### 3.切換分支
 ##### 切換到 issue1 分支
 `$ git checkout issue1`
@@ -131,14 +131,12 @@ Git 初始化
 ###### 確認修改內容完整後即可將分支併回主幹
 
 ##### 執行合併後 分支的更動都會加回主幹
->`file.txt`
-> git 分支的使用方法
-> checkout 切換分支
+>`file.txt`<br>git 分支的使用方法<br>checkout 切換分支
 #### 5.刪除分支
 ##### 執行以下命令
 `$ git branch -d issue1`
 ##### 確認分支是否已被刪除
->`$ git branch`<br>`*master`
+>`$ git branch`<br>*master
 #### 6.平行操作
 ##### 建立兩個分支 並且切換到issue2
 `$ git branch issue2`
