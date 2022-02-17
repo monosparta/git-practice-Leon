@@ -1,1 +1,1 @@
-pull = fetch + merge
+pull指令實作
