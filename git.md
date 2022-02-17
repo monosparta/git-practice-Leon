@@ -78,17 +78,8 @@ Git 初始化
 
 ---
 
-> ` 1. /floder/`
-> ` 2. # 忽略整個floder資料夾`
-> ` 3.  `
-> ` 4. *.zip`
-> ` 5. # 忽略所有.zip文件`
-> ` 6.  `
-> ` 7. /floder/file.txt`
-> ` 8.  # 忽略folder下的file.txt文件`
-> ` 9.  `
-> `10. fd/*`
-> `11. # 忽略目錄fd下的全部內容`
-> `12.  `
-> `13. !/fd2/bin/`
-> `14. # 不忽略根目錄下的/fd2/bin/目錄`
++ `/floder/` 忽略整個floder資料夾
++ `*.zip` 忽略所有.zip文件
++ ` /floder/file.txt` 忽略folder下的file.txt文件
++ `fd/*` 忽略目錄fd下的全部內容
++ `!/fd2/bin/` 不忽略根目錄下的/fd2/bin/目錄
