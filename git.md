@@ -74,3 +74,12 @@ Git 初始化
 + `git merge --abort`
 取消 merge
 
+### .gitignore常用配置
+
+---
+
++ `/floder/` 忽略整個floder資料夾
++ `*.zip` 忽略所有.zip文件
++ ` /floder/file.txt` 忽略folder下的file.txt文件
++ `fd/*` 忽略目錄fd下的全部內容
++ `!/fd2/bin/` 不忽略根目錄下的/fd2/bin/目錄
