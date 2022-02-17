@@ -267,4 +267,56 @@ Git 初始化
 ##### 修改前一次提交 (追加檔案到最近一次的 Commit)
 `$ git commit --amend`
 
+### GitHub 使用方法：push, pull 實作
+
 ---
+
+#### push
+
+![mono](https://imgur.com/X7O8www.png)
+
+##### 右下角`New`建立新的專案
+
+![repository](https://imgur.com/0tbr01y.png)
+
+##### `Create repository`點下去
+##### 遠端數據庫就創建完成了
+##### 接著要把本地數據上傳到遠端
+##### 首先先添加遠端數據庫
+
+![code](https://imgur.com/U2iEyKl.png)
+
+##### `Code`中可看到遠端數據庫的位置
+##### 接著就可以在終端機輸入
+
+`$ git remote add origin https://github.com/monosparta/git-practice-Leon.git`
+
+##### 並且`push`本地檔案到遠端
+`$ git push origin master`
+
+##### 檔案就會出現在遠端上啦!
+![git.md](https://imgur.com/Emq27CM.png)
+
+#### pull
+
+##### 如果在遠端數據庫修改檔案，pull指令可以將其合併到本地端
+##### `pull.md`遠端內容
+
+![pull](https://imgur.com/aruZcVC.png)
+
+##### 新增內容後按下`commit changes`
+
+![add text](https://imgur.com/wICZ2aI.png)
+
+##### 本地的`pull.md`內容
+![local](https://imgur.com/vGMq2wZ.png)
+
+##### 執行`pull`指令
+
+`$ git pull origin master`
+
+![cmd](https://imgur.com/1UxC9gx.png)
+
+##### 再回到`pull.md`檔案發現內容已經被抓下來了~
+
+![local2](https://imgur.com/2Mbl8WX.png)
